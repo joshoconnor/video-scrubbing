@@ -33,7 +33,6 @@ body {
 
 h1 {
   text-align: center;
-  margin: 100px 0;
   font-size: 56px;
   font-weight: 700;
   letter-spacing: -3px;
@@ -56,32 +55,18 @@ article {
 }
 
 .video-container {
-  --border-width: 40px;
   margin: var(--border-width) auto;
   position: sticky;
-  top: var(--border-width);
+  top: 0;
   border: calc(var(--border-width) * 2) solid #0d63f8ee;
   border-top-width: var(--border-width);
   border-left-width: var(--border-width);
-  width: 400px;
-  height: 225px;
+  width: 100vw;
+
   backdrop-filter: blur(4px) brightness(150%);
 }
 
-.video-container::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: calc(var(--border-width));
-  left: calc(var(--border-width));
-  right: calc(var(--border-width) * -1);
-  bottom: calc(var(--border-width) * -1);
-  background-color: transparent;
-  background-image: radial-gradient(transparent 1px, var(--background) 1px);
-  background-size: 5px 5px;
-}
-
 video {
-  width: 400px;
+  width: 100vw;
   position: relative;
 }

@@ -11,6 +11,6 @@ scroll(
   },
   {
     target: document.querySelector("article"),
-    offset: ["-200px", "end end"]
+    offset: ["-200px", "end end"],
   }
 );
