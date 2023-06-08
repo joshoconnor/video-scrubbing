@@ -3991,6 +3991,8 @@ var _animateEs = require("./animate.es.js");
 var _motion = require("motion");
 var video = document.querySelector("video");
 video.pause();
+var items = document.querySelectorAll(".overlay-text > span");
+console.log(items);
 
 // Scrub through the video on scroll
 (0, _motion.scroll)(function (_ref) {
@@ -3998,8 +4000,15 @@ video.pause();
   if (!video.readyState) return;
   video.currentTime = video.duration * y.progress;
 }, {
-  target: document.querySelector("article"),
-  offset: ["-200px", "end end"]
+  target: document.querySelector("article")
+});
+items.forEach(function (item) {
+  (0, _motion.scroll)((0, _motion.animate)(item, {
+    opacity: [0, 1, 1, 0]
+  }), {
+    target: item,
+    offset: ["80% 80%", "20% 20%"]
+  });
 });
 },{"motion":"node_modules/motion/dist/main.es.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -4026,7 +4035,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65395" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56449" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
